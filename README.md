@@ -20,27 +20,28 @@ begin
     DB.Free;
   end;
 end;
-
+```
 1.Connect to a database using the Connect method:
 
-DB.Connect('localhost', 'mydatabase', 'username', 'password', 3306, 'MySQL');
+``` DB.Connect('localhost', 'mydatabase', 'username', 'password', 3306, 'MySQL');```
 
 1.Perform database operations:
 .Create a table:
 
-DB.CreateTable('MyTable', 'ID INT, Name VARCHAR(50), Age INT');
+```DB.CreateTable('MyTable', 'ID INT, Name VARCHAR(50), Age INT');```
 
 1.Perform database operations:
 .Create a table:
 
-DB.CreateTable('MyTable', 'ID INT, Name VARCHAR(50), Age INT');
+```DB.CreateTable('MyTable', 'ID INT, Name VARCHAR(50), Age INT');```
 
 .Drop a table:
 
-DB.DropTable('MyTable');
+```DB.DropTable('MyTable');```
 
 .Execute a query:
 
+```
 var
   Query: TFDQuery;
 begin
@@ -50,22 +51,22 @@ begin
   finally
     Query.Free;
   end;
-end;
+end;```
 
 .Execute an update statement:
 
-DB.ExecuteUpdate('UPDATE MyTable SET Name = :Param0 WHERE ID = :Param1', ['John Doe', 1]);
-
+```DB.ExecuteUpdate('UPDATE MyTable SET Name = :Param0 WHERE ID = :Param1', ['John Doe', 1]);
+```
 .Execute an insert statement:
 
-DB.ExecuteInsert('INSERT INTO MyTable (ID, Name, Age) VALUES (:Param0, :Param1, :Param2)', [1, 'John Doe', 30]);
+```DB.ExecuteInsert('INSERT INTO MyTable (ID, Name, Age) VALUES (:Param0, :Param1, :Param2)', [1, 'John Doe', 30]);```
 
 1.Disconnect from the database:
 
-DB.Disconnect;
+```DB.Disconnect;```
 
 
-Supported Database Systems
+##Supported Database Systems
 DFDatabaseLibrary supports the following database systems through FireDAC's drivers:
 
 MySQL
@@ -74,7 +75,7 @@ Oracle
 Microsoft SQL Server
 To connect to a specific database system, provide the appropriate value for the ADatabaseType parameter when calling the Connect method.
 
-Contributing
+##Contributing
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please submit a pull request.
 
 
